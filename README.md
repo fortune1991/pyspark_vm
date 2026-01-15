@@ -83,13 +83,14 @@ Once all of the prerequesties are installed, please follow the below instruction
         .getOrCreate()
     ```
 
-9. When you want to close the connection to the VM, make sure you kill the Jupyter server first 
-   `jupyter server stop 8888`. If you miss this part, step 10 will fail!
+9. When you want to close the connection to the VM, make sure you kill the server ports first 
+   `jupyter server stop 8888` and `pkill -f pyspark`. If you miss this part, step 10 will fail!
 
 10. Now when you want to log back into the configured machine, run the following: 
-    1. ssh onto the machine with port forwarding: `gcloud compute ssh MACHINE_NAME --zone=ZONE_NAME -- -L 8888:localhost:8888 -L 4040:localhost:4040`
+    1. ssh onto the machine with port forwarding: `gcloud compute ssh terraform-spark-machine --zone=asia-southeast1-b -- -L 8888:localhost:8888 -L 4040:localhost:4040`
     2. cd into the notebooks folder
     3. Activate the venv using `source venv/bin/activate` 
     4. start jupyter lab: `jupyter lab --no-browser --ip=127.0.0.1 --port=8888 > ~/notebooks/jupyter.log 2>&1 &`
     5. run `cat jupyter.log` to find the http address to open the jupyter interface. Make sure to reselect the Python(Spark) kernel
-    5. visit `http://localhost:4040/` to access the pyspark interface
+    6. run the notebook code that contins the Pyspark session from above
+    7. visit `http://localhost:4040/` to access the pyspark interface
