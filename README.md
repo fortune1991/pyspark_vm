@@ -91,5 +91,5 @@ Once all of the prerequesties are installed, please follow the below instruction
     2. cd into the notebooks folder
     3. Activate the venv using `source venv/bin/activate` 
     4. start jupyter lab: `jupyter lab --no-browser --ip=127.0.0.1 --port=8888 > ~/notebooks/jupyter.log 2>&1 &`
-    5. run `cat jupyter.log` to find the http address to open the jupyter interface
+    5. run `cat jupyter.log` to find the http address to open the jupyter interface. Make sure to reselect the Python(Spark) kernel
     5. visit `http://localhost:4040/` to access the pyspark interface
