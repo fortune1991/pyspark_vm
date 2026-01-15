@@ -59,4 +59,4 @@ chmod +x ~/create_spark_kernel.sh
 ~/create_spark_kernel.sh
 
 # --- 8. Start Jupyter Lab ---
-nohup jupyter lab --no-browser --ip=0.0.0.0 --port=8888 > ~/jupyter.log 2>&1 &
+nohup jupyter lab --no-browser --ip=127.0.0.1 --port=8888 > ~/notebooks/jupyter.log 2>&1 &
