@@ -1,0 +1,8 @@
+# Credentials
+keys/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
