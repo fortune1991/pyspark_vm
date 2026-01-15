@@ -82,7 +82,11 @@ Once all of the prerequesties are installed, please follow the below instruction
         .appName('test') \
         .getOrCreate()
     ```
-9. Now when you want to log back into the configured machine, run the following: 
+
+9. When you want to close the connection to the VM, make sure you kill the Jupyter server first 
+   `jupyter server stop 8888`. If you miss this part, step 10 will fail!
+
+10. Now when you want to log back into the configured machine, run the following: 
     1. ssh onto the machine with port forwarding: `gcloud compute ssh MACHINE_NAME --zone=ZONE_NAME -- -L 8888:localhost:8888 -L 4040:localhost:4040`
     2. cd into the notebooks folder
     3. Activate the venv using `source venv/bin/activate` 
