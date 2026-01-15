@@ -6,6 +6,8 @@ This repo contains all of the code nesscessary to simplify the process of creati
 
 Once all of the prerequesties are installed, please follow the below instructions step by step to get started
 
+Note: Any values listed in CAPS will need to be updated by the user
+
 1. Open Google Cloud Console, and if you haven't already create a service account with the following permissions:
     - compute admin
     - storage admin
@@ -17,14 +19,14 @@ Once all of the prerequesties are installed, please follow the below instruction
 
 3. Run `terraform init` and then `terraform apply` to create the GCP infrastructure
 
-4. Once the VM has been created via Terrafom, we need to uplaod the config scripts to the VM, SSH onto the machine (with port forwarding), make the scripts executable and run the script as below:
+4. Once the VM has been created via Terrafom, we need to SSH onto the machine (with port forwarding), uplaod the config scripts to the VM, make the scripts executable and run the script as below:
 
-    1. `gcloud config set project dbt-tutorial-481800`
-    1. `gcloud compute scp setup_vm.sh create_spark_kernel.sh michaelfortune@terraform-spark-machine:~/ --zone=asia-southeast1-b`
-    2. `gcloud compute ssh terraform-spark-machine --zone=asia-southeast1-b -- -L 8888:localhost:8888`
-    3. if you get the message `channel 3: open failed: connect failed: Connection refused` in the terminal, just ctrl + c and ignore. This is because the port is listening for Jupyter which hasn't been installed or launched yet
-    3. `chmod +x ~/setup_vm.sh ~/create_spark_kernel.sh`
-    4. `./setup_vm.sh`
+    1. `gcloud config set project PROJECT_ID`
+    2. `gcloud compute scp setup_vm.sh create_spark_kernel.sh MACHINE_NAME:~/ --zone=GCP_ZONE_NAME`
+    3. `gcloud compute ssh MACHINE_NAME --zone=GCP_ZONE_NAME -- -L 8888:localhost:8888`
+    4. If you get the message `channel 3: open failed: connect failed: Connection refused` in the terminal, just ctrl + c and ignore. This is because the port is listening for Jupyter which hasn't been installed or launched yet
+    5. `chmod +x ~/setup_vm.sh ~/create_spark_kernel.sh`
+    6. `./setup_vm.sh`
 
 5. Now once set-up is complete, it will say "Starting Jupyter Labs" at the bottom of the terminal. Run the logfile to find the URL token `cat jupyter.log`
 6. Open the URL token from within the log file, which should open up the Jupyter console. Example URL here: "http://127.0.0.1:8888/lab?token=6d5a585e239a4846b304e50be607afb5d78d9d9e82761973"

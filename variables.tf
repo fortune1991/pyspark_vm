@@ -1,29 +1,29 @@
 variable "machine_name" {
   description = "Name for my machine"
-  default     = "terraform-spark-machine"
+  default     = "INSERT_MACHINE_NAME"
 }
 
 variable "region" {
   description = "region"
-  default     = "asia-southeast1"
+  default     = "INSERT_GCP_REGION"
 }
 
 variable "zone" {
   description = "zone"
-  default     = "asia-southeast1-b"
+  default     = "INSERT_GCP_ZONE"
 }
 
 variable "credentials" {
   description = "My credentials file"
-  default     = "./keys/dbt-tutorial-keys.json"
+  default     = "./keys/INSERT_YOUR_FILE_NAME"
 }
 
 variable "project_id" {
   description = "My project id"
-  default     = "dbt-tutorial-481800"
+  default     = "INSERT_GCP_PROJECT_ID"
 }
 
 variable "service_account_email" {
   description = "Service account e-mail address"
-  default     = "dbt-226@dbt-tutorial-481800.iam.gserviceaccount.com"
+  default     = "INSERT_SERVICE_ACCOUNT_EMAIL"
 }
