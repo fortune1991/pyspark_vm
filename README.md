@@ -68,7 +68,7 @@ Once all of the prerequesties are installed, please follow the below instruction
     5. `chmod +x ~/setup_vm.sh ~/create_spark_kernel.sh`
     6. `./setup_vm.sh`
 
-5. Now once set-up is complete, it will say "Starting Jupyter Labs" at the bottom of the terminal. Run the logfile to find the URL token `cat jupyter.log`
+5. Now once set-up is complete, it will say "Starting Jupyter Labs" at the bottom of the terminal. cd into notebooks and run the logfile to find the URL token `cat jupyter.log`
 6. Open the URL token from within the log file, which should open up the Jupyter console. Example URL here: "http://127.0.0.1:8888/lab?token=6d5a585e239a4846b304e50be607afb5d78d9d9e82761973"
 7. Select the new Python(Spark) kernel and create a new notebook
 8. Paste the following boiler plate code at the top of the notebook to create a new pyspark session
